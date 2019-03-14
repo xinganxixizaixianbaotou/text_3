@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+
+    <!--<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
+        <!--<property name="templateLoaderPath" value="/ftl/"/>-->
+        <!--<property name="defaultEncoding" value="utf-8" />-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 配置freeMarker视图解析器 &ndash;&gt;-->
+    <!--<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
+        <!--<property name="contentType" value="text/html; charset=utf-8"/>-->
+        <!--<property name="prefix" value=""/>-->
+        <!--<property name="suffix" value=".ftl"/>-->
+    <!--</bean>-->
+
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+
+    <!--开启Shiro的注解，实现对Controller的方法级权限检查(如@RequiresRoles,@RequiresPermissions),需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全逻辑验证-->
+    <!--配置以下两个bean即可实现此功能 -->
+    <!--Enable Shiro Annotations for Spring-configured beans. Only run after thelifecycleBeanProcessor has run -->
+
+
+
+
+    <!--开启事务注解-->
+    <context:component-scan base-package="com.hy"></context:component-scan>
+
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--Springmvc实现文件上传组件-->
+
+
+</beans>
