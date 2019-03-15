@@ -14,4 +14,9 @@ public class TextController {
     public String text(){
         return "index.jsp";
     }
+
+    @RequestMapping("candy.do")
+    public String candy(){
+        return "candy.jsp";
+    }
 }
